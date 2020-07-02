@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
+        <link rel="stylesheet" href="./main.css">
     </head>
 
     <body>
@@ -21,13 +22,13 @@
 
         <main>
             <section>
-                <form class="blog-entry" onsubmit="return handleSubmit(event)">
+                <form class="blog-entry" onsubmit="return Client.handleSubmit(event)">
                     <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
                     <input id="title" type="text" name="input" value="" onblur="onBlur()" placeholder="Title">
                     <textarea placeholder="Enter your thoughts here">
 
                     </textarea>
-                    <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
                 </form>
             <section>
 
