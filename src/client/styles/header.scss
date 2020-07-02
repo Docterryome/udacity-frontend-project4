@@ -1,5 +1,15 @@
+
+$primary-color: #AFAFAF;
+
 header {
+    height: 20vh;
+    min-height: 100px;
+    background-color: $primary-color;
     display: flex;
     justify-content: space-between;
     padding: 10px 40px;
+
+    .title{
+        font-size: 2.0em;
+    }
 }
