@@ -35,6 +35,7 @@ app.get('/entity', function (req, res) {
         'text': 'Punta Cana is a dope city!'
       }, function(error, response) {
         if (error === null) {
+          console.log(response);
           res.send(response);
         }
       });
