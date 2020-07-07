@@ -3,6 +3,8 @@ const express = require('express');
 const mockAPIResponse = require('./mockAPI.js');
 const AYLIENTextAPI = require('aylien_textapi');
 const dotenv = require('dotenv');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 dotenv.config();
 
@@ -17,7 +19,8 @@ var textapi = new AYLIENTextAPI({
 const app = express()
 
 app.use(express.static('dist'))
-
+app.use(bodyParser.json());
+app.use(cors());
 console.log(__dirname)
 
 app.get('/', function (req, res) {
