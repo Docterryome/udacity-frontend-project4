@@ -34,7 +34,7 @@ app.listen(process.env.NODE_PORT, function () {
 })
 
 app.post('/entity', function (req, res) {
-    textapi.entityLevelSentiment({
+    textapi.classify({
         'text': req.body.input
       }, function(error, response) {
         if (error === null) {

@@ -14,6 +14,7 @@ function displayData(event){
     console.log(dataObj);
     postData('http://localhost:8080/entity', dataObj).then(data => {
         languageSystem.innerHTML = data;
+        console.log(data);
         results.appendChild(languageSystem);
     });
 }
