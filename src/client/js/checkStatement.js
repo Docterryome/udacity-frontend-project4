@@ -9,11 +9,18 @@ function displayData(event){
     event.preventDefault();
     const input = document.getElementById('name').value;
     const results = document.getElementById('results');
-    const languageSystem = document.createElement('p');
+    const languageSystem = document.createDocumentFragment();
     const dataObj = { input }
     console.log(dataObj);
     postData('http://localhost:8080/entity', dataObj).then(data => {
-        languageSystem.innerHTML = data;
+        const p = document.createElement('p');
+        p.innerHTML = `Text Data: ${data.text}`;
+        languageSystem.appendChild(p);
+        data.categories.forEach(element => {
+            const label = document.createElement('p');
+            label.innerHTML = `Label: ${element.label}`;
+            languageSystem.appendChild(label);
+        });
         console.log(data);
         results.appendChild(languageSystem);
     });
