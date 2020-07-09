@@ -22,13 +22,9 @@
 
         <main>
             <section>
-                <form class="blog-entry" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input id="title" type="text" name="input" value="" onblur="onBlur()" placeholder="Title">
-                    <textarea placeholder="Enter your thoughts here">
-
-                    </textarea>
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                <form class="blog-entry" onsubmit="return Client.checkStatement(event)">
+                    <input id="name" type="text" name="input" value="" placeholder="Enter Text">            
+                    <button onclick="return Client.checkStatement(event)">Click Me please</button>
                 </form>
             <section>
 
@@ -42,5 +38,14 @@
             <p>This is a footer</p>
         </footer>
 
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+              // Use the window load event to keep the page load performant
+              window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+              });
+            }
+            </script>
     </body>
 </html>
