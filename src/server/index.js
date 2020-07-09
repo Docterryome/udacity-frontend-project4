@@ -33,9 +33,9 @@ app.listen(process.env.NODE_PORT, function () {
     console.log(`Example app listening on port ${process.env.NODE_PORT}`)
 })
 
-app.get('/entity', function (req, res) {
+app.post('/entity', function (req, res) {
     textapi.entityLevelSentiment({
-        'text': 'Punta Cana is a dope city!'
+        'text': req.body.input
       }, function(error, response) {
         if (error === null) {
           console.log(response);
