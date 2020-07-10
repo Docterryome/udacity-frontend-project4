@@ -1,7 +1,7 @@
 @import 'variables';
 
 body {
-    color: $color-b;
+    color: $color-e;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -9,6 +9,7 @@ body {
 
 main {
     flex: 2;
+    background-color: $color-b;
 }
 
 section {
