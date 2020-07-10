@@ -1,4 +1,7 @@
+@import 'variables';
+
 body {
+    color: $color-b;
     display: flex;
     flex-direction: column;
     min-height: 100vh;

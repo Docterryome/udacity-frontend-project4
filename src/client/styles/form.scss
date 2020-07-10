@@ -1,4 +1,7 @@
+@import 'variables';
+
 .blog-entry {
+    background-color: $color-e;
     border: 1px black solid;
     border-radius: 3px;
     padding: 2.5em;

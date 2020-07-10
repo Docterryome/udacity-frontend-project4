@@ -1,10 +1,11 @@
+@import 'variables';
 
-$primary-color: #AFAFAF;
 
 header {
+    color: $color-d;
     height: 20vh;
     min-height: 100px;
-    background-color: $primary-color;
+    background-color: $color-a;
     display: flex;
     justify-content: space-between;
     padding: 10px 40px;

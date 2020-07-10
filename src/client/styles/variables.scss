@@ -1,0 +1,15 @@
+@use "sass:map";
+
+$theme-color: (
+    "dark-liver": #56494C,
+    "taupe-gray": #847E89,
+     "quick-silver": #9FA4A9,
+     "ash-gray": #AFBFC0,
+     "opal": #C2D3CD
+);
+
+$color-a: map-get($theme-color, "dark-liver");
+$color-b: map-get($theme-color, "taupe-gray");
+$color-c: map-get($theme-color, "quick-silver");
+$color-d: map-get($theme-color, "ash-gray");
+$color-e: map-get($theme-color, "opal");
