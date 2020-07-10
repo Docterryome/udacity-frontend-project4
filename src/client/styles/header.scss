@@ -1,15 +1,48 @@
+@import 'variables';
 
-$primary-color: #AFAFAF;
 
 header {
+    color: $color-d;
     height: 20vh;
     min-height: 100px;
-    background-color: $primary-color;
+    background-color: $color-a;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 10px 40px;
 
     .title{
         font-size: 2.0em;
+        flex: 1;
+    }
+    *{
+        border: 1px red solid;
+    }
+
+    .logo{
+        flex: 1;
+    }
+
+    .menu{
+        display: flex;
+        align-items: center;
+        flex: 2;
+        ul{
+            display: block;
+            list-style-type: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            li{
+                display: inline;
+                padding: .5em;
+                a{
+                    color: $color-c;
+                    text-decoration: none;
+                    &:hover{
+                        color: $color-e;
+                    }
+                }
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@
     "test": "env NODE_PORT=8080 node src/server/index.js",
     "start": " env NODE_PORT=8080 node src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack  --config webpack.dev.js"
+    "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
   },
   "keywords": [],
   "author": "",

@@ -1,13 +1,18 @@
-.blog-entry {
-    border: 1px solid #545454;
-    border-radius: 3px;
-    padding: 40px;
-    display: grid;
+@import 'variables';
 
-    input {
-        padding: 5px 20px;
-        width: 100%;
-        line-height: 16px;
-        margin: 10px 0;
+.blog-entry {
+    background-color: $color-e;
+    border: 1px black solid;
+    border-radius: 3px;
+    padding: 2.5em;
+    display: flex;
+    flex-direction: column;
+
+    input{
+        &:hover{
+            border-color: $color-c;
+        }
+        margin: 5px;
+        box-sizing: border-box;
     }
 }
