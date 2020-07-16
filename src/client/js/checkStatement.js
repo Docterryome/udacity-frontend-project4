@@ -7,23 +7,29 @@ function checkStatement(event){
 
 function displayData(event){
     event.preventDefault();
+    const tohttp = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/
     const input = document.getElementById('name').value;
     const results = document.getElementById('results');
     const languageSystem = document.createDocumentFragment();
     const dataObj = { input }
     console.log(dataObj);
-    postData('http://localhost:8080/entity', dataObj).then(data => {
-        const p = document.createElement('p');
-        p.innerHTML = `Text Data: ${data.text}`;
-        languageSystem.appendChild(p);
-        data.categories.forEach(element => {
-            const label = document.createElement('p');
-            label.innerHTML = `Label: ${element.label}`;
-            languageSystem.appendChild(label);
+    if(dataObj.input.match(tohttp)){
+        console.log("This is an http post!");
+    }
+    else{
+        postData('http://localhost:8080/classify-text', dataObj).then(data => {
+            const p = document.createElement('p');
+            p.innerHTML = `Text Data: ${data.text}`;
+            languageSystem.appendChild(p);
+            data.categories.forEach(element => {
+                const label = document.createElement('p');
+                label.innerHTML = `Label: ${element.label}`;
+                languageSystem.appendChild(label);
+            });
+            console.log(data);
+            results.appendChild(languageSystem);
         });
-        console.log(data);
-        results.appendChild(languageSystem);
-    });
+    }
 }
 
 async function postData(url ='', data = {}){

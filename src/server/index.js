@@ -33,7 +33,7 @@ app.listen(process.env.NODE_PORT, function () {
     console.log(`Example app listening on port ${process.env.NODE_PORT}`)
 })
 
-app.post('/entity', function (req, res) {
+app.post('/classify-text', function (req, res) {
     textapi.classify({
         'text': req.body.input
       }, function(error, response) {
@@ -43,3 +43,15 @@ app.post('/entity', function (req, res) {
         }
       });
 })
+
+app.post('/classify-url', function(req, res){
+  textapi.classify({
+    url: req.body.input
+    },
+    function(error, response){
+      if(error === null){
+        console.log(response);
+        res.send(response);
+      }
+    });
+});
