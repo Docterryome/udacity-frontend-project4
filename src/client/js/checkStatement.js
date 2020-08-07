@@ -54,6 +54,8 @@ function printData(dataObj, data) {
 
 }
 
+
 export {
-    checkStatement
+    checkStatement,
+    printData
 }
