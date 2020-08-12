@@ -1,13 +1,14 @@
 //Use the fetch command to get the input from the user and calculate the message
-function checkStatement(event) {
-    const form = document.querySelector('.blog-entry');
+function checkInput(event) {
+    const form = document.querySelector('.blog-entry-text');
     form.addEventListener('submit', displayData);
 }
 
 function displayData(event) {
+    console.log("what a world")
     event.preventDefault();
     const tohttp = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/
-    const input = document.getElementById('name').value;
+    const input = document.getElementById('text-input').value;
     const dataObj = {
         input
     }
@@ -56,6 +57,7 @@ function printData(dataObj, data) {
 
 
 export {
-    checkStatement,
+    checkInput,
+    postData,
     printData
 }

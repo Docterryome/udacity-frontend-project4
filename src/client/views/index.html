@@ -27,9 +27,13 @@
 
         <main>
             <section class="form-section">
-                <form class="blog-entry" onsubmit="return Client.checkStatement(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Enter Text">            
-                    <button onclick="return Client.checkStatement(event)">Click Me please</button>
+                <form class="blog-entry-text" onsubmit="return Client.checkStatement(event)">
+                    <input id="text-input" type="text" name="input" value="" placeholder="Enter Text">            
+                    <button onclick="return Client.checkInput(event)">SubmitInput</button>
+                </form>
+                <form class="blog-entry-url">
+                    <input id="text-url" type="text" name="input" value="" placeholder="Enter Text">            
+                    <button onclick="return Client.checkUrl(event)">SubmitURL</button>
                 </form>
             <section>
 
