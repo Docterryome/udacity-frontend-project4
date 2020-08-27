@@ -7,9 +7,10 @@ function checkUrl(event){
     form.addEventListener('submit', addUrlData);
 }
 
-const urlValidation = (inputText) => {
+ const urlValidation =  (inputText, callback) => {
     const inputData = {input: inputText};
-    postData("http://localhost:8080/classify-url", inputData).then(data =>{
+    return callback("http://localhost:8080/classify-url", inputData).then(data =>{
+        console.log(data);
         printData(inputData, data);
     });
 };
@@ -19,7 +20,7 @@ const urlValidation = (inputText) => {
 function addUrlData(event) {
     event.preventDefault();
     const getInput = document.getElementById('text-url').value;
-    urlValidation(getInput);
+    urlValidation(getInput, postData);
 }
 
 

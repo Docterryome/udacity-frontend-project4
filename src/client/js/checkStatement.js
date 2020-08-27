@@ -5,20 +5,12 @@ function checkInput(event) {
 }
 
 function displayData(event) {
-    console.log("what a world")
     event.preventDefault();
-    const tohttp = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/
     const input = document.getElementById('text-input').value;
     const dataObj = {
         input
     }
-    console.log(dataObj);
-    if (dataObj.input.match(tohttp)) {
-        console.log("This is an http post!");
-        postData('http://localhost:8080/classify-url', dataObj).then(data => printData(dataObj, data));
-    } else {
-        postData('http://localhost:8080/classify-text', dataObj).then(data => printData(dataObj, data));
-    }
+    postData('http://localhost:8080/classify-text', dataObj).then(data => printData(dataObj, data));
 }
 
 async function postData(url = '', data = {}) {
@@ -29,10 +21,12 @@ async function postData(url = '', data = {}) {
         },
         body: JSON.stringify(data)
     });
+    console.log(response.json());
     return response.json();
 }
 
 function printData(dataObj, data) {
+    console.log(`Data: ${data} DataObj: ${dataObj}`);
     const results = document.getElementById('results');
     const languageSystem = document.createDocumentFragment();
     const p = document.createElement('p');
@@ -44,13 +38,16 @@ function printData(dataObj, data) {
         languageSystem.appendChild(label);
     } else {
         data.categories.forEach(element => {
+            console.log(element);
             const label = document.createElement('p');
             label.innerHTML = `Label: ${element.label}`;
             languageSystem.appendChild(label);
+            console.log(`${label.innerHTML}`);
         });
     }
 
     console.log(data);
+    console.log(`Results: ${languageSystem.innerHTML}`);
     results.appendChild(languageSystem);
 
 }

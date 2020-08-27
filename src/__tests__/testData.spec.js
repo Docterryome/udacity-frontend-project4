@@ -1,6 +1,7 @@
 import { printData } from '../client/js/checkStatement';
-import { postData } from '../client/js/checkStatement';
-import { urlValidation } from '../client/js/urlValidation';
+import { json } from '../server/mockAPI';
+
+
 
 
 test('Testing priting data', () => {
