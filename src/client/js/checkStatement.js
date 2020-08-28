@@ -10,7 +10,7 @@ function displayData(event) {
     const dataObj = {
         input
     }
-    postData('http://localhost:8080/classify-text', dataObj).then(data => printData(dataObj, data));
+    postData('http://localhost:8081/classify-text', dataObj).then(data => printData(dataObj, data));
 }
 
 async function postData(url = '', data = {}) {

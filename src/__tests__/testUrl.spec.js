@@ -9,7 +9,7 @@ test('Testing url Validation', async () => {
     <body>
 
     <header>
-        <div class="logo">
+        <div class="log">
             Logo
         </div>
         <div class="title">

@@ -9,7 +9,7 @@ function checkUrl(event){
 
  const urlValidation =  (inputText, callback) => {
     const inputData = {input: inputText};
-    return callback("http://localhost:8080/classify-url", inputData).then(data =>{
+    callback("http://localhost:8081/classify-url", inputData).then(data =>{
         console.log(data);
         printData(inputData, data);
     });
